@@ -2,7 +2,7 @@
 class Body extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { repos: [],url:''};
+    this.state = {};
   }
 
 
@@ -48,6 +48,10 @@ class Header extends React.Component {
   }
 
   types = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
+
+  componentDidMount(){
+    this.changeType('All')
+  }  
 
   changeType = type => {
     
