@@ -1,0 +1,11 @@
+.list:hover{
+    color: red;
+}
+
+.list{
+    cursor: pointer; 
+    list-Style: none;
+    display: inline-flex;
+    padding: 10px;
+    margin: 0 auto
+}

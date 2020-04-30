@@ -5,7 +5,6 @@ class Body extends React.Component {
     this.state = {};
   }
 
-
   render() {
     const {type} = this.props;
     // 5. 查看child2是否成功获取到数值
@@ -88,9 +87,9 @@ class Header extends React.Component {
 
 
   render() {
-    return <header >
-      <ul>
-        {this.types.map(item=> <li key={item} onClick={() => this.changeType(item)} style={{ cursor: 'pointer', listStyle:'none', display:'inline-flex',padding:10}}>{item}</li>)}
+    return <header>
+      <ul >
+        {this.types.map(item=> <li class = 'list' key={item} onClick={() => this.changeType(item)}>{item}</li>)}
       </ul>
     </header>
   }
