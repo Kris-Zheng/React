@@ -72,7 +72,7 @@ class Header extends React.Component {
     console.log(type)
     // 2. 尝试将数组传给parent
     // 2-1. 此时传递的不再是type, 而是获取到的数据
-    const baseUrl = `http://api.github.com/search/repositories?q=stars:%3E1+language:${type}&sort=stars&order=desc&type=Repositories`
+    const baseUrl = `https://api.github.com/search/repositories?q=stars:%3E1+language:${type}&sort=stars&order=desc&type=Repositories`
     axios.get(baseUrl)
     .then(res=>{
       // 3. 回调parent为该child1准备的方法
