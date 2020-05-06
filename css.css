@@ -1,6 +1,7 @@
-.list:hover{
-    color: red;
-}
+.list:hover {
+    color: rgb(255, 2, 2);
+
+  }
 
 .list{
     cursor: pointer; 
@@ -8,4 +9,8 @@
     display: inline-flex;
     padding: 10px;
     margin: 0 auto
+}
+.scroll-body {
+    overflow: auto; 
+    -webkit-overflow-scrolling: touch
 }
