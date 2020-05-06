@@ -49,8 +49,6 @@ class Body extends React.Component {
  *   3-2. data.push('第二页的数据') -> setState({data})
  */
 
-
-
     const list = type.map((item, key) =>
       <li key={item.id} style={{ padding: 50, backgroundColor: '#f6f6f6', margin: 5, listStyle: 'none' }}>
         <h3 style={{ textAlign: 'center' }}>#{key + 1}</h3>
@@ -67,6 +65,11 @@ class Body extends React.Component {
       <ul style={{ display: 'flex', flexWrap: 'wrap' }}>
         {list}
       </ul>
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
     </main>;
   }
 }
@@ -113,9 +116,11 @@ class Header extends React.Component {
 
   render() {
     return <header>
-      <ul >
-        {this.types.map(item => <li className='list' key={item} onClick={() => this.changeType(item)}>{item}</li>)}
+      <div className='list'>
+      <ul>
+        {this.types.map(item =><li key={item} onClick={() => this.changeType(item)}>{item}</li>)}
       </ul>
+      </div>
     </header>
   }
 }
@@ -142,8 +147,7 @@ class App extends React.Component {
      * todo:
      * 1. 解决冗余
      * 2. 变量命名规范
-     * 3. 加载动画 loading
-     * 4. 骨架页面（数据未加载出来的过渡动画）
+     * 3. 骨架页面（数据未加载出来的过渡动画）
      */
 
 
