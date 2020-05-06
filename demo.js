@@ -77,7 +77,7 @@ class Body extends React.Component {
 class Header extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { type: 'All' };
+    this.state = { currenttype: 'All' };
   }
 
   types = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python']
@@ -86,7 +86,7 @@ class Header extends React.Component {
     this.changeType('All')
   }
 
-  changeType = (type, page = 1) => {
+  changeType = (currenttype, page = 1) => {
 
     // 1. 获取到当前点击的类型
     // 2. 再一次通过api获取该类型的数据
@@ -102,14 +102,14 @@ class Header extends React.Component {
     */
 
     // 1. child1 获取到需要传递给parent的值
-    console.log(type)
+    console.log(currenttype)
     // 2. 尝试将数组传给parent
     // 2-1. 此时传递的不再是type, 而是获取到的数据
-    const baseUrl = `https://api.github.com/search/repositories?q=stars:%3E1+language:${type}&sort=stars&order=desc&type=Repositories&page=${page}`
+    const baseUrl = `https://api.github.com/search/repositories?q=stars:%3E1+language:${currenttype}&sort=stars&order=desc&type=Repositories&page=${page}`
     axios.get(baseUrl)
       .then(res => {
         // 3. 回调parent为该child1准备的方法
-        this.props.callback(res.data.items, type)
+        this.props.callback(res.data.items, currenttype)
       })
   }
 
