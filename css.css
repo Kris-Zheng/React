@@ -1,20 +1,23 @@
 .list{
     margin: 0 auto;
+    text-align: center;
 }
 .list ul{
     cursor: pointer; 
     list-Style: none;
     display: inline-flex;
-    margin-left: 650px;
-  
+ 
   }
 .list ul li{
     padding: 20px;
 }
 
-.list ul li:hover{
+.list ul li:hover,:focus{
     color: rgb(255, 2, 2);
 }
+
+
+
 
 .spinner {
     margin: 100px auto 0;
